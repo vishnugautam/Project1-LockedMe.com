@@ -1,5 +1,6 @@
 package feature2;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import mainMenu.MainMenu;
@@ -20,8 +21,7 @@ public class SearchFile implements Repeats{
 	@Override
 	public String location() {
 		System.out.println("Please Enter the directory path to which the program must function:  \n");
-		System.out.println("Copy the actual path from the command line ex - \'C:\\\\Users\\\\Vishnu\\\\Desktop\\\\'"
-				+ "and paste it here: ");
+		System.out.println("Copy the actual path from the command line ex - 'C:\\\\Users\\\\Vishnu\\\\Desktop\\\\' and paste it here:  \n");
 		Scanner sc = new Scanner(System.in);
 		String path = sc.next();
 		return path;
@@ -38,20 +38,24 @@ public class SearchFile implements Repeats{
 		
 		if(userChoice == 1) {
 		
-			SearchFile sf = new SearchFile();
-			sf.display();
+			System.out.println("Enter the name of the file to be searched: ");
 			Scanner sc = new Scanner(System.in);
 			String fileName = sc.next();
 			File path = new File(usrPath);
 			String[] contents = path.list();
+			ArrayList<String> list = new ArrayList<String>();
 			
 			for(int i = 0; i < contents.length; i++) {
-				if(contents[i] == fileName) {
-					System.out.println("The file is in the directory");
-				} else {
-					System.out.println("The file is not in the directory");
-				}
+				list.add(contents[i]);
 			}
+			if(list.contains(fileName)) {
+				System.out.println("The file is in the directory");
+				
+			} else {
+				System.out.println("The file is not in the directory");
+			}
+			
+			searchFile();
 			
 		} else if(userChoice == 2) {
 			FileHandling fh = new FileHandling();

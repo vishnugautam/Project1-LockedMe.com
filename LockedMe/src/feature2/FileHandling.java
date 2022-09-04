@@ -9,6 +9,7 @@ public class FileHandling implements Repeats{
 	public void display() {
 		System.out.println("\n");
 		System.out.println("Select between these 3 options:");
+		System.out.println("\n");
 		System.out.println("Type 1 to Add a file \n");
 		System.out.println("Type 2 to Delete a file \n");
 		System.out.println("Type 3 to Search a file \n");

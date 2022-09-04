@@ -20,8 +20,7 @@ public class AddFile implements Repeats{
 	@Override
 	public String location() {
 		System.out.println("Please Enter the directory path to which the program must function:  \n");
-		System.out.println("Copy the actual path from the command line ex - \"C:\\\\Users\\\\Vishnu\\\\Desktop\\\\Post graduation in full stack web development\\\\Project1-LockedMe.com\" "
-				+ "and paste it here: ");
+		System.out.println("Copy the actual path from the command line ex - 'C:\\\\Users\\\\Vishnu\\\\Desktop\\\\' and paste it here:  \n");
 		Scanner sc = new Scanner(System.in);
 		String path = sc.next();
 		return path;
